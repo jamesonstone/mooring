@@ -8,9 +8,12 @@ Mooring scans each Dockerfile statically and at runtime to detect potential vuln
 
 ### Static
 
-Mooring performs static analysis on a Dockerfile as a string literal 
+Mooring performs static analysis on a Dockerfile using string matching and regular expressions, and a policy document to
+determine whether a vulnerability is present.
 
 ### Runtime
+
+Mooring preforms runtime analysis but buildings and running the container image
 
 ## Installation
 
