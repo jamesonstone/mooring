@@ -10,17 +10,18 @@ import (
 
 func main() {
 	var (
-		sChannel = make(chan string)
-		rChannel = make(chan string)
+		sChannel           = make(chan string)
+		rChannel           = make(chan string)
+		denyPolicyDocument = "./DENY.txt"
+		pathToDockerfile   = "./Dockerfile"
+		policyMap          = policy.Load(denyPolicyDocument)
 	)
 
-	static.Scan(sChannel)
+	static.Scan(sChannel, pathToDockerfile, policyMap)
 	runtime.Scan(rChannel)
 
 	s := <-sChannel
 	r := <-rChannel
 
 	log.Println(r, s)
-
-	policy.Load("./POLICY.txt")
 }
