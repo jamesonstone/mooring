@@ -23,5 +23,6 @@ func main() {
 	s := <-sChannel
 	r := <-rChannel
 
-	log.Println(r, s)
+	log.Println("Static Scan:", s)
+	log.Println("Runtime Scan:", r)
 }

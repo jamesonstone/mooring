@@ -7,7 +7,7 @@ import (
 )
 
 func Load(pathToDenyPolicyFile string) map[string]bool {
-	log.Printf("Loading deny policy from %s", pathToDenyPolicyFile)
+	log.Printf("💫  Loading Deny Policy from %s", pathToDenyPolicyFile)
 	denyPolicyMap := make(map[string]bool)
 	denyList, err := ioutil.ReadFile(pathToDenyPolicyFile)
 	if err != nil {

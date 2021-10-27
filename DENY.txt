@@ -2,3 +2,7 @@ curl
 bash
 git
 #ssh
+nmap
+netstat
+wireshark
+gcc

@@ -19,7 +19,7 @@ func Scan(staticChan chan string, pathToDockerfile string, policyMap map[string]
 	deniedPackagesList := policyAnalysis(fetchFinalContainerImage(strings.Split(string(dockerfile), "\n")), policyMap)
 
 	go func() { if len(deniedPackagesList) > 0 {
-		staticChan <- "❗️  The following package should be removed form the final container image: " + strings.Join(deniedPackagesList, " ")
+		staticChan <- "❗️  The following packages should be removed form the final container image: [" + strings.Join(deniedPackagesList, " ") + "]"
 	 } else {
 		staticChan <- "✨  No vulnerable packages found in the final container image"
 	}
@@ -53,7 +53,6 @@ func policyAnalysis(finalContainerContents []string, denyPolicyMap map[string]bo
 		}
 	}
 
-	log.Print(denyList)
 	return denyList
 }
 

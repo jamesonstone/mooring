@@ -17,6 +17,15 @@ git
 ssh
 ```
 
+Use `#` to temporarily allow a package.
+
+```text
+bash
+curl
+git
+#ssh
+```
+
 ### Static
 
 Mooring performs static analysis on a Dockerfile using string matching and regular expressions, and a policy document to
@@ -24,7 +33,7 @@ determine whether a vulnerability is present.
 
 ### Runtime
 
-Mooring preforms runtime analysis but buildings and running the container image
+Mooring preforms runtime analysis via docker scan on built container images
 
 ## Installation
 
