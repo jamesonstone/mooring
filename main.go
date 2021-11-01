@@ -18,7 +18,7 @@ func main() {
 	)
 
 	static.Scan(sChannel, pathToDockerfile, policyMap)
-	runtime.Scan(rChannel)
+	runtime.Scan("", rChannel)
 
 	s := <-sChannel
 	r := <-rChannel

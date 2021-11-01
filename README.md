@@ -1,6 +1,6 @@
 # mooring
 
-A Dockerfile Scanner for Potential Runtime Vulnerabilities
+A customizable Dockerfile Scanner for Potential Runtime Vulnerabilities
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ git
 ssh
 ```
 
-Use `#` to temporarily allow a package.
+Use `#` or don't include them in the `DENY.txt` to temporarily allow a package
 
 ```text
 bash
@@ -26,9 +26,13 @@ git
 #ssh
 ```
 
+## How to Use
+
+Check out the `main.go` file for an example of how to call Mooring.
+
 ### Static
 
-Mooring performs static analysis on a Dockerfile using string matching and regular expressions, and a policy document to
+Mooring performs static analysis on a Dockerfile using string matching in conjunction with a policy document to
 determine whether a vulnerability is present.
 
 ### Runtime
@@ -43,7 +47,8 @@ go get [...]
 
 ## TODO
 
-Assess integration of static analysis with [buildkit's Dockerfile parser](https://pkg.go.dev/github.com/moby/buildkit/frontend/dockerfile/parser#Parse)
+- Assess integration of static analysis with [buildkit's Dockerfile parser](https://pkg.go.dev/github.com/moby/buildkit/frontend/dockerfile/parser#Parse)
+- Check for final container image user
 
 ## Support
 
